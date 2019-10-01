@@ -1,0 +1,156 @@
+	https://leetcode.com/problems/reverse-string
+Write a function that reverses a string. The input string is given as an array of characters char[].
+
+Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+
+You may assume all the characters consist of printable ascii characters.
+
+ 
+
+Example 1:
+
+Input: ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]
+Example 2:
+
+Input: ["H","a","n","n","a","h"]
+Output: ["h","a","n","n","a","H"]
+
+class Solution:
+    def reverseString(self, s):
+        """
+        :type s: List[str]
+        :rtype: None Do not return anything, modify s in-place instead.
+        """
+        s.reverse()
+        return s
+        
+        
+ #	https://leetcode.com/problems/detect-capital
+  Given a word, you need to judge whether the usage of capitals in it is right or not.
+
+We define the usage of capitals in a word to be right when one of the following cases holds:
+
+All letters in this word are capitals, like "USA".
+All letters in this word are not capitals, like "leetcode".
+Only the first letter in this word is capital, like "Google".
+Otherwise, we define that this word doesn't use capitals in a right way.
+ 
+
+Example 1:
+
+Input: "USA"
+Output: True
+ 
+
+Example 2:
+
+Input: "FlaG"
+Output: False
+
+class Solution:
+    def detectCapitalUse(self, word: str) -> bool:
+    	return word in [word.upper(), word.lower(), word.title()]
+      
+#o	https://leetcode.com/problems/reverse-words-in-a-string-iii
+Given a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+
+Example 1:
+Input: "Let's take LeetCode contest"
+Output: "s'teL ekat edoCteeL tsetnoc"
+
+class Solution:
+	def reverseWords(self, word: str) -> str:
+        
+		words = word.split(' ')        # creating a list of words
+        
+		reverse = []        # reversed words will be stored here
+		for word in words:
+			reverse.append(word[::-1])      # adding reversed word to the reverse list
+
+		result = ' '.join(reverse)      #  joining the words with a space
+
+		return result
+    
+  #o	https://leetcode.com/problems/valid-palindrome
+  Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+
+Note: For the purpose of this problem, we define empty string as valid palindrome.
+
+Example 1:
+
+Input: "A man, a plan, a canal: Panama"
+Output: true
+Example 2:
+
+Input: "race a car"
+Output: false
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        
+        s = ''.join(i for i in s if i.isalnum()).lower()
+        return s == s[::-1]
+
+# https://leetcode.com/problems/reverse-vowels-of-a-string
+Write a function that takes a string as input and reverse only the vowels of a string.
+
+Example 1:
+
+Input: "hello"
+Output: "holle"
+Example 2:
+
+Input: "leetcode"
+Output: "leotcede"
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        """
+        :type s: str
+        :rtype: str
+        """
+        vowels = {'a','A','e','E','i','I','o','O','u','U'}
+        s = list(s)
+        left, right = 0, len(s) - 1
+        while left < right:
+            if s[left] not in vowels:
+                left += 1
+            elif s[right] not in vowels:
+                right -= 1
+            else:
+                s[left], s[right] = s[right], s[left]
+                left += 1
+                right -= 1
+        
+        return "".join(s)
+#	https://leetcode.com/problems/longest-common-prefix
+
+Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "".
+
+Example 1:
+
+Input: ["flower","flow","flight"]
+Output: "fl"
+Example 2:
+
+Input: ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.
+
+class Solution:
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        if not strs:
+            return ""
+        shortest = min(strs,key=len)
+        for i, ch in enumerate(shortest):
+            for other in strs:
+                if other[i] != ch:
+                    return shortest[:i]
+        return shortest 
+        
