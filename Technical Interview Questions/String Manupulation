@@ -1,13 +1,13 @@
 # https://leetcode.com/problems/reverse-string
-Write a function that reverses a string. The input string is given as an array of characters char[].
+# Write a function that reverses a string. The input string is given as an array of characters char[].
 
-Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+# Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
 
-You may assume all the characters consist of printable ascii characters.
+# You may assume all the characters consist of printable ascii characters.
 
  
 
-Example 1:
+# Example 1:
 
 Input: ["h","e","l","l","o"]
 Output: ["o","l","l","e","h"]
@@ -26,24 +26,24 @@ class Solution:
         return s
         
         
- #	https://leetcode.com/problems/detect-capital
-  Given a word, you need to judge whether the usage of capitals in it is right or not.
+ # https://leetcode.com/problems/detect-capital
+ # Given a word, you need to judge whether the usage of capitals in it is right or not.
 
-We define the usage of capitals in a word to be right when one of the following cases holds:
+# We define the usage of capitals in a word to be right when one of the following cases holds:
 
-All letters in this word are capitals, like "USA".
-All letters in this word are not capitals, like "leetcode".
-Only the first letter in this word is capital, like "Google".
-Otherwise, we define that this word doesn't use capitals in a right way.
+# All letters in this word are capitals, like "USA".
+# All letters in this word are not capitals, like "leetcode".
+# Only the first letter in this word is capital, like "Google".
+# Otherwise, we define that this word doesn't use capitals in a right way.
  
 
-Example 1:
+# Example 1:
 
 Input: "USA"
 Output: True
  
 
-Example 2:
+# Example 2:
 
 Input: "FlaG"
 Output: False
@@ -52,12 +52,12 @@ class Solution:
     def detectCapitalUse(self, word: str) -> bool:
     	return word in [word.upper(), word.lower(), word.title()]
       
-#o	https://leetcode.com/problems/reverse-words-in-a-string-iii
-Given a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+# https://leetcode.com/problems/reverse-words-in-a-string-iii
+# Given a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
 
-Example 1:
-Input: "Let's take LeetCode contest"
-Output: "s'teL ekat edoCteeL tsetnoc"
+# Example 1:
+# Input: "Let's take LeetCode contest"
+# Output: "s'teL ekat edoCteeL tsetnoc"
 
 class Solution:
 	def reverseWords(self, word: str) -> str:
@@ -74,11 +74,11 @@ class Solution:
     
 
 #https://leetcode.com/problems/valid-palindrome
-  Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+# Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 
-Note: For the purpose of this problem, we define empty string as valid palindrome.
+# Note: For the purpose of this problem, we define empty string as valid palindrome.
 
-Example 1:
+# Example 1:
 
 Input: "A man, a plan, a canal: Panama"
 Output: true
@@ -94,9 +94,9 @@ class Solution:
         return s == s[::-1]
 
 # https://leetcode.com/problems/reverse-vowels-of-a-string
-Write a function that takes a string as input and reverse only the vowels of a string.
+# Write a function that takes a string as input and reverse only the vowels of a string.
 
-Example 1:
+# Example 1:
 
 Input: "hello"
 Output: "holle"
@@ -104,6 +104,8 @@ Example 2:
 
 Input: "leetcode"
 Output: "leotcede"
+
+
 class Solution:
     def reverseVowels(self, s: str) -> str:
         """
@@ -124,13 +126,15 @@ class Solution:
                 right -= 1
         
         return "".join(s)
+
+
 # https://leetcode.com/problems/longest-common-prefix
 
-Write a function to find the longest common prefix string amongst an array of strings.
+# Write a function to find the longest common prefix string amongst an array of strings.
 
-If there is no common prefix, return an empty string "".
+# If there is no common prefix, return an empty string "".
 
-Example 1:
+# Example 1:
 
 Input: ["flower","flow","flight"]
 Output: "fl"
@@ -138,7 +142,8 @@ Example 2:
 
 Input: ["dog","racecar","car"]
 Output: ""
-Explanation: There is no common prefix among the input strings.
+# Explanation: There is no common prefix among the input strings.
+
 
 class Solution:
     def longestCommonPrefix(self, strs):
