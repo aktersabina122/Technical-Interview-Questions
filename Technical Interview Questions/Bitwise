@@ -1,1 +1,150 @@
 
+# https://leetcode.com/problems/number-complement
+Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.
+
+Note:
+The given integer is guaranteed to fit within the range of a 32-bit signed integer.
+You could assume no leading zero bit in the integer’s binary representation.
+Example 1:
+Input: 5
+Output: 2
+Explanation: The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.
+Example 2:
+Input: 1
+Output: 0
+Explanation: The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.
+
+class Solution:
+    def findComplement(self, num: int) -> int:
+        b = bin(num)[2:]
+        orList = list(b)
+        rList = list()
+        for i in orList:
+            if i == '0':
+                rList.append('1')
+            else:
+                rList.append('0')
+        r = ''.join(rList)
+        return int(r,2)
+        
+ #o	https://leetcode.com/problems/hamming-distance/
+ The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
+
+Given two integers x and y, calculate the Hamming distance.
+
+Note:
+0 ≤ x, y < 231.
+
+Example:
+
+Input: x = 1, y = 4
+
+Output: 2
+
+Explanation:
+1   (0 0 0 1)
+4   (0 1 0 0)
+       ↑   ↑
+
+The above arrows point to positions where the corresponding bits are different.
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        return bin(x^y).count('1')
+ 
+ #	https://leetcode.com/problems/binary-gap
+ Given a positive integer N, find and return the longest distance between two consecutive 1's in the binary representation of N.
+
+If there aren't two consecutive 1's, return 0.
+
+ 
+
+Example 1:
+
+Input: 22
+Output: 2
+Explanation: 
+22 in binary is 0b10110.
+In the binary representation of 22, there are three ones, and two consecutive pairs of 1's.
+The first consecutive pair of 1's have distance 2.
+The second consecutive pair of 1's have distance 1.
+The answer is the largest of these two distances, which is 2.
+Example 2:
+
+Input: 5
+Output: 2
+Explanation: 
+5 in binary is 0b101.
+Example 3:
+
+Input: 6
+Output: 1
+Explanation: 
+6 in binary is 0b110.
+Example 4:
+
+Input: 8
+Output: 0
+Explanation: 
+8 in binary is 0b1000.
+There aren't any consecutive pairs of 1's in the binary representation of 8, so we return 0.
+
+class Solution(object):
+    def binaryGap(self, N):
+        """
+        :type N: int
+        :rtype: int
+        """
+        temp_gap = 0
+        bin_gap = 0
+        one_detected = 0
+        
+        while N:
+                              # counter will reset when we run into 1
+            if N%2 == 1:
+                one_detected += 1
+                bin_gap = max(bin_gap, temp_gap)
+                temp_gap = 0
+                               # counter will start when we already encountered a digit 1
+                                # counter will increase when the current digit is 0
+            elif one_detected:
+                temp_gap += 1
+            N //= 2
+        
+        if one_detected < 2:
+            return 0
+        else:
+            return bin_gap+1
+		# bin_ gap will increased by 1, because we only counted zeros between ones
+		# and the distance between indexes of ones will be +1
+  
+  
+  #o	https://leetcode.com/problems/single-number
+  Given a non-empty array of integers, every element appears twice except for one. Find that single one.
+
+Note:
+
+Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+
+Example 1:
+
+Input: [2,2,1]
+Output: 1
+Example 2:
+
+Input: [4,1,2,1,2]
+Output: 4
+
+class Solution(object):
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        s = set()
+        for num in nums:
+            if num in s:
+                 s.remove(num)
+            else:
+                 s.add(num)
+        return s.pop()
+        
