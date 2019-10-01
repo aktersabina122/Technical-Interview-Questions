@@ -1,4 +1,4 @@
-	https://leetcode.com/problems/reverse-string
+# https://leetcode.com/problems/reverse-string
 Write a function that reverses a string. The input string is given as an array of characters char[].
 
 Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
@@ -72,7 +72,8 @@ class Solution:
 
 		return result
     
-  #o	https://leetcode.com/problems/valid-palindrome
+
+#https://leetcode.com/problems/valid-palindrome
   Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 
 Note: For the purpose of this problem, we define empty string as valid palindrome.
@@ -123,7 +124,7 @@ class Solution:
                 right -= 1
         
         return "".join(s)
-#	https://leetcode.com/problems/longest-common-prefix
+# https://leetcode.com/problems/longest-common-prefix
 
 Write a function to find the longest common prefix string amongst an array of strings.
 
