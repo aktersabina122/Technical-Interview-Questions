@@ -1,21 +1,21 @@
-o	https://leetcode.com/problems/plus-one
+# https://leetcode.com/problems/plus-one
 
-Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
+# Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
 
-The digits are stored such that the most significant digit is at the head of the list, and each element in the array contain a single digit.
+# The digits are stored such that the most significant digit is at the head of the list, and each element in the array contain a single digit.
 
-You may assume the integer does not contain any leading zero, except the number 0 itself.
+# You may assume the integer does not contain any leading zero, except the number 0 itself.
 
-Example 1:
+# Example 1:
 
-Input: [1,2,3]
-Output: [1,2,4]
-Explanation: The array represents the integer 123.
-Example 2:
+# Input: [1,2,3]
+# Output: [1,2,4]
+# Explanation: The array represents the integer 123.
+# Example 2:
 
-Input: [4,3,2,1]
-Output: [4,3,2,2]
-Explanation: The array represents the integer 4321.
+# Input: [4,3,2,1]
+# Output: [4,3,2,2]
+# Explanation: The array represents the integer 4321.
 
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
@@ -26,10 +26,10 @@ class Solution:
             digits[i] = 0
         return [1] + digits
         
- o	https://leetcode.com/problems/excel-sheet-column-number
- Given a column title as appear in an Excel sheet, return its corresponding column number.
+ # https://leetcode.com/problems/excel-sheet-column-number
+ # Given a column title as appear in an Excel sheet, return its corresponding column number.
 
-For example:
+# For example:
 
     A -> 1
     B -> 2
@@ -39,7 +39,7 @@ For example:
     AA -> 27
     AB -> 28 
     ...
-Example 1:
+# Example 1:
 
 Input: "A"
 Output: 1
@@ -52,6 +52,7 @@ Example 3:
 Input: "ZY"
 Output: 701
 
+Solution:
 public class Solution {
 public int titleToNumber(String s) {
     int sum = 0;
@@ -63,10 +64,10 @@ public int titleToNumber(String s) {
 }
 }
 
-o	https://leetcode.com/problems/power-of-two
-Given an integer, write a function to determine if it is a power of two.
+# https://leetcode.com/problems/power-of-two
+# Given an integer, write a function to determine if it is a power of two.
 
-Example 1:
+# Example 1:
 
 Input: 1
 Output: true 
@@ -81,7 +82,7 @@ Example 3:
 Input: 218
 Output: false
 
-class Solution:
+# class Solution:
     def isPowerOfTwo(self, n):
         return (n>0) and (n & (n-1)) == 0
 
